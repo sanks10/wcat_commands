@@ -1,8 +1,10 @@
 let inp=process.argv.slice(2);
+let fs=require("fs");
 console.log('input', inp);
 let options=[],filesystem=[];
 for(let i=0; i<inp.length;i++){
-    if(inp[i].charAt(0)=='-'){
+    if(inp[i]=='-b'||inp[i]=="-s"||inp[i]=='-n'){
+
         options.push(inp[i]);
     }
     else{
@@ -10,3 +12,11 @@ for(let i=0; i<inp.length;i++){
     }
 }
 console.log(options," ",filesystem);
+for(let i=0;i<filesystem.length;i++){
+    let c=fs.existsSync(filesystem[i]);
+    if(c==false){
+        console.log("filesystem", filesystem[i]," does not exist");
+
+    }
+
+}
