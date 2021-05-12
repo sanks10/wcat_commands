@@ -174,3 +174,16 @@ if(isNOption==true){
     console.log(totalcontent);
 
 }
+let isBOption=options.includes("-b");
+if(isBOption){
+    let arr=totalcontent.split('\n');
+    let count=1;
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]!=""){
+            arr[i]=count+". "+arr[i];
+            count++;
+        }
+    }
+    totalcontent=arr.join('\n');
+    console.log(totalcontent);
+}
