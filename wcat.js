@@ -18,5 +18,8 @@ for(let i=0;i<filesystem.length;i++){
         console.log("filesystem", filesystem[i]," does not exist");
 
     }
-
+    else{
+        let d=fs.readFileSync(filesystem[i]);
+        console.log(d.toString());
+    }
 }
